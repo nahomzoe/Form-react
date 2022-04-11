@@ -1,28 +1,30 @@
 import React from "react";
 
+import PropTypes from "prop-types";
+
 const Form = () => {
   return (
-    <form>
+    <form onChange={props.change} onSubmit={props.submit}>
       <div className="form-field">
-        <label for="firstName">
-          First name<span className="whitespace">5ni</span>
+        <label htmlfor="firstname">
+          First name<span className="whitespace">wni</span>
         </label>
-        <input type="text" />
+        <input type="text" name="firstname" id="firstname" required />
       </div>
 
       <div className="form-field">
-        <label for="lastName">
+        <label htmlfor="lastname">
           Last name<span className="whitespace">nnn</span>
         </label>
-        <input type="text" />
+        <input type="text" name="lastname" id="lastname" required />
       </div>
 
       <div className="form-field">
-        <label for="phonenumber">Phonenumber</label>
-        <input type="text" />
+        <label htmlfor="phone">Phonenumber</label>
+        <input type="text" name="phone" id="phone" required />
       </div>
-      <label for="dropdown">
-        Role<span className="whitespace">wwwwwwwDnnn</span>
+      <label htmlfor="dropdown">
+        Role<span className="whitespace">iiwiwwwwwDnnn</span>
       </label>
       <select name="dropdown" id="dropdown">
         <option value="teacher" selected>
@@ -32,11 +34,11 @@ const Form = () => {
         <option value="employee">Employee</option>
       </select>
       <div className="form-field">
-        <label for="message">
-          Message<span className="whitespace">w5nnnnnnnn</span>
+        <label htmlfor="message">
+          Message<span className="whitespace">ii5nnnnnnnn</span>
         </label>
 
-        <textarea id="message" name="message" rows="4" cols="27" />
+        <textarea id="message" name="message" rows="4" cols="27" required />
       </div>
       <div className="center submit form-field">
         <input type="submit" id="submit" value="SEND" />

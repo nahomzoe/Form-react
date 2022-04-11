@@ -1,16 +1,43 @@
 import "./App.css";
 import Form from "./Form";
 import Note from "./Note";
+import Popup from "./Popup";
 import { Component } from "react";
 
 class App extends Component {
-  state = 10;
+  state = {
+    inputData: {
+      firstname: "",
+      lastname: "",
+      phone: "",
+      dropdown: "",
+      message: "",
+    },
+    showPopup: false,
+  };
+
+  inputHandler = (e) => {
+    this.setState({
+      inputData: { ...this.state.inputData, [e.target.name]: e.target.value },
+    });
+  };
+  popUpHandler = (e) => {
+    e.preventDefault();
+    this.state({ showPopup: !this.state.showPopup });
+  };
+
+  closeHandler = (e) => {
+    window.location.reload();
+  };
 
   render() {
     return (
       <main>
-        <Form />
-        <Note />
+        <Form change={this.inputHandler} submit={this.popUpHandler} />
+        <Note {...this.state.inputData} />
+        {this.state.showPopup && (
+          <Popup close={this.closeHandler} {...this.state.inputData} />
+        )}
       </main>
     );
   }
