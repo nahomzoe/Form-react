@@ -1,8 +1,6 @@
 import React from "react";
 
-import PropTypes from "prop-types";
-
-const Form = () => {
+const Form = (props) => {
   return (
     <form onChange={props.change} onSubmit={props.submit}>
       <div className="form-field">
@@ -23,6 +21,7 @@ const Form = () => {
         <label htmlfor="phone">Phonenumber</label>
         <input type="text" name="phone" id="phone" required />
       </div>
+
       <label htmlfor="dropdown">
         Role<span className="whitespace">iiwiwwwwwDnnn</span>
       </label>

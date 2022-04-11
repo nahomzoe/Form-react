@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import Form from "./Form";
 import Note from "./Note";
 import Popup from "./Popup";
@@ -23,7 +23,7 @@ class App extends Component {
   };
   popUpHandler = (e) => {
     e.preventDefault();
-    this.state({ showPopup: !this.state.showPopup });
+    this.setState({ showPopup: !this.state.showPopup });
   };
 
   closeHandler = (e) => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Note = () => {
+const Note = (props) => {
   return (
     <div>
       <h2 id="note-header">View your input:</h2>
