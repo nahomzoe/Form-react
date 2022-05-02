@@ -1,0 +1,44 @@
+{
+  "note": [
+    {
+      "id": 1,
+      "firstname": "Nahom",
+      "lastname": "Asfaw",
+      "phone": "0009998877",
+      "role": "Student",
+      "message": "Hello How are you"
+    },
+    {
+      "id": 2,
+      "firstname": "Zoe",
+      "lastname": "Asfaw",
+      "phone": "1119998877",
+      "role": "Teacher",
+      "message": "I am busy"
+    },
+    {
+      "id": 3,
+      "firstname": "Psala",
+      "lastname": "Geber",
+      "phone": "2229998877",
+      "role": "Emplyee",
+      "message": "working"
+    },
+    {
+      "id": 4,
+      "firstname": "Psala",
+      "lastname": "Geber",
+      "phone": "2229998877",
+      "role": "Emplyee",
+      "message": "working"
+    },
+    {
+      "firstname": "Nahom",
+      "lastname": "Daniel",
+      "phone": "98749879847",
+      "dropdown": "student",
+      "message": "I am good",
+      "id": 5
+    }
+  ]
+}

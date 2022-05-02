@@ -67,7 +67,7 @@ label {
   padding: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
-  width: 40%;
+  width: 120%;
   position: relative;
 }
 
@@ -98,11 +98,12 @@ span {
 
 .popup {
   position: absolute;
-  left: 50%;
-  bottom: 40%;
+  left: 54%;
+  bottom: -80%;
   background-color: aliceblue;
-  width: 25rem;
+  width: 28rem;
 }
+
 button {
   margin: 1rem;
   background: transparent;
@@ -118,4 +119,11 @@ button {
   text-decoration: none;
   border: 0;
   font-size: 14px;
+}
+.view {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.post {
+  background-color: rgb(255, 255, 255);
 }
