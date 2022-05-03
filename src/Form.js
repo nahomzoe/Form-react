@@ -7,25 +7,43 @@ const Form = (props) => {
         <label htmlfor="firstname">
           First name<span className="whitespace">wni</span>
         </label>
-        <input type="text" name="firstname" id="firstname" required />
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          required
+          defaultValue={props.firstname}
+        />
       </div>
 
       <div className="form-field">
         <label htmlfor="lastname">
           Last name<span className="whitespace">nnn</span>
         </label>
-        <input type="text" name="lastname" id="lastname" required />
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          required
+          defaultValue={props.lastname}
+        />
       </div>
 
       <div className="form-field">
         <label htmlfor="phone">Phonenumber</label>
-        <input type="text" name="phone" id="phone" required />
+        <input
+          type="text"
+          name="phone"
+          id="phone"
+          required
+          defaultValue={props.phone}
+        />
       </div>
 
       <label htmlfor="dropdown">
         Role<span className="whitespace">iiwiwwwwwDnnn</span>
       </label>
-      <select name="dropdown" id="dropdown">
+      <select name="dropdown" id="dropdown" defaultValue={props.dropdown}>
         <option value="teacher" selected>
           Teacher
         </option>
@@ -37,7 +55,14 @@ const Form = (props) => {
           Message<span className="whitespace">ii5nnnnnnnn</span>
         </label>
 
-        <textarea id="message" name="message" rows="4" cols="27" required />
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          cols="27"
+          required
+          defaultValue={props.message}
+        />
       </div>
       <div className="center submit form-field">
         <input type="submit" id="submit" value="SEND" />

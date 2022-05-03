@@ -6,8 +6,17 @@ const Post = (props) => {
       <ol>
         {data.map((note) => (
           <li key={note.id}>
-            {note.firstname} | {note.lastname} | {note.phone} | {note.dropdown}{" "}
-            | {note.message}
+            <button
+              className="deletebutton"
+              onClick={() => props.delete(note.id)}
+            >
+              Delete
+            </button>
+            <button className="editbutton" onClick={() => props.update(note)}>
+              Edit
+            </button>
+            {note.firstname} - {note.lastname} - {note.phone} - {note.dropdown}{" "}
+            - {note.message}
           </li>
         ))}
       </ol>

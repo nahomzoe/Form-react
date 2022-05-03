@@ -120,10 +120,46 @@ button {
   border: 0;
   font-size: 14px;
 }
+.deletebutton {
+  margin: 1rem;
+  background: transparent;
+  border: 5px solid 0.0005px;
+  cursor: pointer;
+  width: auto;
+  background-color: rgb(194, 81, 116);
+  border-radius: 100px;
+  color: whitesmoke;
+  font-family: "Tajawal", sans-serif;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  font-size: 14px;
+}
+.editbutton {
+  margin: 1rem;
+  background: transparent;
+  border: 5px solid 0.0005px;
+  cursor: pointer;
+  width: auto;
+  background-color: rgb(59, 69, 111);
+  border-radius: 100px;
+  color: whitesmoke;
+  font-family: "Tajawal", sans-serif;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  font-size: 14px;
+}
+
 .view {
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
 .post {
   background-color: rgb(255, 255, 255);
+}
+.editpopup {
+  background: transparent;
 }

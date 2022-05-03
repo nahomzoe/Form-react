@@ -5,6 +5,7 @@ import Popup from "./Popup";
 import { Component } from "react";
 import Post from "./Post";
 import axios from "axios";
+import EditPopup from "./EditPopup";
 
 class App extends Component {
   state = {
@@ -18,6 +19,8 @@ class App extends Component {
     showPopup: false,
     data: [],
     isLoading: false,
+    updatePopup: false,
+    currentNote: {},
   };
 
   componentDidMount() {
@@ -55,6 +58,38 @@ class App extends Component {
     window.location.reload();
   };
 
+  deleteHandler = (id) => {
+    axios.delete(`http://localhost:3030/note/${id}`).then((res) => {
+      const notes = this.state.data.filter((item) => item.id !== id);
+      this.setState({ data: notes });
+    });
+  };
+
+  updateHandler = (item) => {
+    this.setState({ updatePopup: true, currentNote: item });
+  };
+
+  inputUpdateHandler = (e) => {
+    this.setState({
+      currentNote: {
+        ...this.state.currentNote,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  UpdatPutHandler = (id) => {
+    axios
+      .put(`http://localhost:3030/note/${id}`, this.state.currentNote)
+      .then((res) => res.data);
+  };
+  /*closeUpdatePopup = () => {
+    this.setState({
+      updatePopup: false,
+      currentItem: null,
+    });
+  };*/
+
   render() {
     return (
       <main>
@@ -62,13 +97,26 @@ class App extends Component {
           <Form change={this.inputHandler} submit={this.popUpHandler} />
           <Note {...this.state.inputData} />
         </div>
-        <Post data={this.state.data} />
+        <Post
+          data={this.state.data}
+          delete={this.deleteHandler}
+          update={this.updateHandler}
+        />
 
         {this.state.showPopup && (
           <Popup
             close={this.closeHandler}
             {...this.state.inputData}
             submit={this.submitHandler}
+          />
+        )}
+
+        {this.state.updatePopup && (
+          <EditPopup
+            change={this.inputUpdateHandler}
+            {...this.state.currentNote}
+            submit={this.UpdatPutHandler(this.state.currentNote.id)}
+            //close={this.closeUpdatePopup}
           />
         )}
       </main>
