@@ -6,6 +6,7 @@ body {
 form {
   margin-top: 4rem;
   margin-left: 2rem;
+  margin-bottom: 2rem;
 }
 form-field {
   margin-left: 3rem;
@@ -97,9 +98,9 @@ span {
 }
 
 .popup {
-  position: absolute;
-  left: 54%;
-  bottom: -80%;
+  position: fixed;
+  left: 50%;
+  bottom: 25%;
   background-color: aliceblue;
   width: 28rem;
 }
@@ -161,5 +162,10 @@ button {
   background-color: rgb(255, 255, 255);
 }
 .editpopup {
-  background: transparent;
+  background-color: rgb(59, 69, 111);
+  position: fixed;
+  left: 50%;
+  bottom: 25%;
+
+  width: 28rem;
 }
